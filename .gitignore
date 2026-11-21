@@ -1,0 +1,30 @@
+# Build output, including the former root-level project output.
+**/[Bb]in/
+**/[Oo]bj/
+/artifacts/
+/publish/
+
+# IDE and user-specific settings.
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Test and coverage results.
+**/TestResults/
+**/coverage/
+*.coverage
+*.coveragexml
+
+# Generated packages and logs.
+*.nupkg
+*.snupkg
+*.binlog
+*.log
+
+# OS metadata.
+.DS_Store
+Thumbs.db
+Desktop.ini

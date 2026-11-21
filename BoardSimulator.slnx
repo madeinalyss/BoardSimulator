@@ -1,0 +1,19 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="CONTRIBUTING.md" />
+    <File Path="global.json" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/Documentation/">
+    <File Path="docs/architecture.md" />
+    <File Path="docs/specification/board-simulator-prototype-0.1-spec.md" />
+    <File Path="tests/README.md" />
+  </Folder>
+  <Project Path="examples/BoardSimulator.Demo/BoardSimulator.Demo.csproj" />
+  <Project Path="src/BoardSimulator.Core/BoardSimulator.Core.csproj" Id="66bdadd0-da0a-49a7-a9c1-098dbb6e1b17" />
+  <Project Path="src/BoardSimulator.Wpf/BoardSimulator.Wpf.csproj" Id="0d959996-a35a-41ce-97ab-5e237ccdbaa3" />
+</Solution>
