@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 
-namespace BoardSimulator
+namespace BoardSimulator.Core
 {
     public class Net
     {

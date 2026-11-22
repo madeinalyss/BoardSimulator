@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="../../src/BoardSimulator.Core/BoardSimulator.Core.csproj" />
+    <ProjectReference Include="..\..\src\BoardSimulator.Runtime\BoardSimulator.Runtime.csproj" />
   </ItemGroup>
 
 </Project>

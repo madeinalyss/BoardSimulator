@@ -1,6 +1,7 @@
-﻿using System;
+using BoardSimulator.Core;
+using System;
 
-namespace BoardSimulator
+namespace BoardSimulator.Demo
 {
     class Program
     {
@@ -15,32 +16,8 @@ namespace BoardSimulator
             Console.WriteLine($"Подключено выводов: {net.Pins.Count}");
             Console.WriteLine($"Состояние цепи: {net.Resolve()}");
 
-            second.Drive = PinDrive.Low;
-            Console.WriteLine($"Добавили сильный Low: {net.Resolve()}");
-            first.Drive = PinDrive.Z;
-            Console.WriteLine($"Отключили первый выход: {net.Resolve()}");
-            second.Drive = PinDrive.Z;
-            Console.WriteLine($"Отключили второй выход: {net.Resolve()}");
-
             ShowElectricalStates();
-            ShowGpioMode();
-        }
-
-        static void ShowGpioMode()
-        {
-            GpioPin gpio = new();
-            gpio.SetMode(GpioMode.InputPullUp);
-            Console.WriteLine($"{gpio.Mode}: Drive={gpio.Pin.Drive}, PullUp={gpio.Pin.PullUpEnabled}");
-            gpio.SetMode(GpioMode.Output);
-            Console.WriteLine($"Вход в Output: {gpio.OutputLatch}, {gpio.Pin.Drive}");
-            gpio.Write(GpioLevel.High);
-            Console.WriteLine($"Запись High: {gpio.OutputLatch}, {gpio.Pin.Drive}");
-            gpio.SetMode(GpioMode.Output);
-            Console.WriteLine($"Повтор Output: {gpio.OutputLatch}, {gpio.Pin.Drive}");
-            gpio.SetMode(GpioMode.Input);
-            Console.WriteLine($"Вход: Drive={gpio.Pin.Drive}, PullUp={gpio.Pin.PullUpEnabled}");
-            gpio.SetMode(GpioMode.Output);
-            Console.WriteLine($"Снова Output: {gpio.OutputLatch}, {gpio.Pin.Drive}");
+            ShowLedState();
         }
 
         static void ShowElectricalStates()
@@ -48,6 +25,20 @@ namespace BoardSimulator
             foreach (GpioMode mode in Enum.GetValues<GpioMode>())
                 foreach (GpioLevel latch in Enum.GetValues<GpioLevel>())
                     Console.WriteLine($"{mode}, {latch} → {GpioPin.ComputeElectricalState(mode, latch)}");
+        }
+
+        static void ShowLedState()
+        {
+            LedComponent led = new LedComponent("led", "LED");
+            GpioPin gpioPin = new GpioPin();
+            Net net = new Net();
+            net.Pins.Add(gpioPin.Pin);
+            net.Pins.Add(led.Signal);
+            Console.WriteLine($"Состояние светодиода до вмешательства: {led.GetState(net.Resolve())}");
+            gpioPin.SetMode(GpioMode.Output);
+            Console.WriteLine($"Состояние светодиода после изменения выхода: {led.GetState(net.Resolve())}");
+            gpioPin.Write(GpioLevel.High);
+            Console.WriteLine($"Состояние светодиода после установки уровня: {led.GetState(net.Resolve())}");
         }
     }
 }

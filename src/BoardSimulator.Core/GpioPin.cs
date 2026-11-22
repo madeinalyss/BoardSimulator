@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace BoardSimulator
+namespace BoardSimulator.Core
 {
     public class GpioPin
     {

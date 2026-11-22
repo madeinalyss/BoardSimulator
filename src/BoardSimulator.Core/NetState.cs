@@ -1,4 +1,4 @@
-﻿namespace BoardSimulator
+namespace BoardSimulator.Core
 {
     public enum NetState
     {
