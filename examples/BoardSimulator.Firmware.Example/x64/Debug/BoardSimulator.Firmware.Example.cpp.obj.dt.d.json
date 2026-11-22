@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\projects\\boardsimulator\\examples\\boardsimulator.firmware.example\\boardsimulator.firmware.example.cpp",
+        "ProvidedModule": "",
+        "Includes": [
+            "d:\\projects\\boardsimulator\\examples\\boardsimulator.firmware.example\\pch.h",
+            "d:\\projects\\boardsimulator\\examples\\boardsimulator.firmware.example\\framework.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

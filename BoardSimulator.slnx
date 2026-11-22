@@ -15,10 +15,14 @@
   </Configurations>
   <Folder Name="/Documentation/">
     <File Path="docs/architecture.md" />
+    <File Path="docs/status.md" />
+    <File Path="docs/specification/README.md" />
+    <File Path="docs/specification/board-simulator-prototype-0.1-r2-spec.md" />
     <File Path="docs/specification/board-simulator-prototype-0.1-spec.md" />
     <File Path="tests/README.md" />
   </Folder>
   <Project Path="examples/BoardSimulator.Demo/BoardSimulator.Demo.csproj" />
+  <Project Path="examples/BoardSimulator.Firmware.Example/BoardSimulator.Firmware.Example.vcxproj" Id="aa751e11-92fc-4c9c-a77a-902d53c954c5" />
   <Project Path="native/BoardSimulator.Worker/BoardSimulator.Worker.vcxproj" Id="3aaaf30f-178a-45c7-a32e-377ca2988bd0" />
   <Project Path="src/BoardSimulator.Core/BoardSimulator.Core.csproj" Id="66bdadd0-da0a-49a7-a9c1-098dbb6e1b17" />
   <Project Path="src/BoardSimulator.Runtime/BoardSimulator.Runtime.csproj" Id="0da6ed45-74ac-4f18-bc13-6ab0a4215bdd" />

@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BoardSimulator.Core\BoardSimulator.Core.csproj" />
+    <ProjectReference Include="..\BoardSimulator.Runtime\BoardSimulator.Runtime.csproj" />
   </ItemGroup>
 
 </Project>
